@@ -1,0 +1,123 @@
+/* Reset dei margini e font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Gradiente scuro con riflesso dorato nell'angolo destro come nelle foto */
+    background: radial-gradient(circle at top right, rgba(255, 204, 0, 0.15), transparent 50%),
+                linear-gradient(135deg, #2b1040 0%, #0f051a 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.landing-container {
+    max-width: 650px;
+    width: 100%;
+}
+
+/* Stile del Logo */
+.logo {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+}
+
+.logo-d {
+    color: #ffcc00; /* Oro */
+}
+
+.logo {
+    color: #58c1be; /* Colore 'plan' azzurro/verde acqua */
+}
+
+/* Testi */
+.headline {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #cccccc;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Stilizzazione del Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #ffcc00;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Bottone Submit Giallo/Oro */
+.submit-button {
+    background-color: #d4b446;
+    color: #1a0b2e;
+    border: none;
+    border-radius: 20px;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #ffcc00;
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+    opacity: 0.6;
+    font-size: 12px;
+}
+
+.footer nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.footer p {
+    margin-top: 15px;
+}
