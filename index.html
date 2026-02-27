@@ -3,46 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dorplan - Your entire trip, organized in one place.</title>
+    <title>Jorplan - Il tuo intero viaggio, organizzato in un unico posto</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<main class="landing-container">
-    <header class="header">
-        <div class="logo">
-            <span class="logo-d">d</span>orplan
+<div class="language-selector-container">
+    <select id="languageSwitch" onchange="changeLanguage(this.value)">
+        <option value="it">Italiano</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="pt">Português</option>
+        <option value="de">Deutsch</option>
+        <option value="zh">中文</option>
+        <option value="ja">日本語</option>
+        <option value="ar">العربية</option>
+    </select>
+</div>
+
+<main class="landing-page">
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="images/fullLogo.png" alt="Jorplan Logo" class="logo-large">
         </div>
-        <h1 class="headline">Your entire trip, organized in one place.</h1>
-        <p class="description">
-            Plan every detail of your journey, from hidden gems to transport schedules.
-            Store your tickets, manage accommodations, and discover new destinations
-            using our integrated search tools. Everything you need is just one click away.
-            Available in 9+ languages on iOS and Android.
+        <h1 class="hero-title" data-key="hero_title">Your entire trip, organized in one place.</h1>
+        <p class="hero-subtitle" data-key="hero_subtitle">
+            Plan every detail of your journey, from hidden gems to transport schedules. Store your tickets, manage accommodations, and discover new destinations using our integrated search tools. Everything you need is just one click away. Available in more than nine languages on Apple Operating System and Android.
         </p>
     </header>
 
-    <section class="form-section">
-        <form action="https://formspree.io/f/xkoverna" method="POST">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" placeholder="I want to join the wishlist!"></textarea>
-
-            <input type="text" name="_gotcha" style="display:none">
-
-            <button type="submit" class="submit-button">Submit</button>
-        </form>
+    <section class="subscription-section">
+        <div class="form-wrapper">
+            <form action="https://formspree.io/f/xkoverna" method="POST">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" data-key="form_message">I want to join the wishlist!</textarea>
+                <button type="submit" class="cta-button" data-key="form_submit">Submit</button>
+            </form>
+        </div>
     </section>
 
-    <footer class="footer">
-        <nav>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms and Conditions</a>
-        </nav>
-        <p>&copy; Jorplan 2026. All rights reserved.</p>
+    <hr class="divider">
+    <section class="feature-block">
+        <div class="feature-text">
+            <h2 class="feature-heading" data-key="feat0_title">Your trips, wherever you are</h2>
+            <p data-key="feat0_desc">Create and organize your trips to keep your entire itinerary at your fingertips, even offline. Premium users can also export and import their data and sync trips across all devices for a seamless cross-platform experience.</p>
+        </div>
+        <div class="feature-image">
+            <img src="images/tripsGeneral.jpg" alt="All in one Dashboard" class="mockup-img">
+        </div>
+    </section>
+
+    <section class="feature-block reverse">
+        <div class="feature-text">
+            <h2 class="feature-heading" data-key="feat1_title">All in one</h2>
+            <p data-key="feat1_desc">Keep your entire journey under control in one smart dashboard. Access your full itinerary and essential booking data anytime, anywhere even without an internet connection.</p>
+        </div>
+        <div class="feature-image">
+            <img src="images/allInOne.jpg" alt="All in one Dashboard" class="mockup-img">
+        </div>
+    </section>
+    <section class="feature-block">
+        <div class="feature-text">
+            <h2 class="feature-heading" data-key="feat7_title">Every detail under control</h2>
+            <p data-key="feat7_desc">Plan your events with pinpoint precision. From flight times and booking numbers to QR codes for quick access and personalized notes, every single aspect of your day is organized and ready to use.</p>
+        </div>
+        <div class="feature-image slideshow" id="slideshow-details">
+            <img src="images/details.PNG" class="mockup-img active" alt="Normal Add">
+            <img src="images/detailsQrCode.png" class="mockup-img" alt="Artificial Intelligence Add">
+        </div>
+    </section>
+
+    <section class="feature-block reverse">
+        <div class="feature-text">
+            <h2 class="feature-heading" data-key="feat2_title">Smart Planning</h2>
+            <p data-key="feat2_desc">Planning is even easier for our Premium users. Simply upload a screenshot of your booking and the Artificial Intelligence will extracts all relevant details and integrates them into your personal itinerary.</p>
+        </div>
+        <div class="feature-image slideshow" id="slideshow-planning">
+            <img src="images/addGeneral.PNG" class="mockup-img active" alt="Normal Add">
+            <img src="images/addAi.PNG" class="mockup-img" alt="Artificial Intelligence Add">
+        </div>
+    </section>
+
+    <section class="feature-block">
+        <div class="feature-text">
+            <h2 class="feature-heading" data-key="feat3_title">Interactive Timeline and Routes generator</h2>
+            <p data-key="feat3_desc">Seamlessly navigate through multi destination trips with a clear, visual chronological flow of your itinerary. Instantly export your custom route to your favorite navigation application.</p>
+        </div>
+        <div class="feature-image slideshow" id="slideshow-timeline">
+            <img src="images/RouteGenerator.PNG" class="mockup-img active" alt="Route Generator">
+            <img src="images/timeline.PNG" class="mockup-img" alt="Trip Cards">
+        </div>
+    </section>
+
+    <section class="feature-block reverse">
+        <div class="feature-text">
+            <h2 class="feature-heading" data-key="feat4_title">Master your budget and bookings</h2>
+            <p data-key="feat4_desc">Access a comprehensive breakdown of your trip expanses from the top drawer. Tack total costs categorized by transport, stay, dining, and activities. Perfect for groups! See a clear per person cost division and monitor your booking status.</p>
+        </div>
+        <div class="feature-image slideshow" id="slideshow-budget">
+            <img src="images/OverviewCosts.PNG" class="mockup-img active" alt="Overview Costs Booking One">
+            <img src="images/OverviewMembers.PNG" class="mockup-img" alt="Overview Costs Booking Two">
+        </div>
+    </section>
+
+    <section class="feature-block">
+        <div class="feature-text">
+            <h2 class="feature-heading" data-key="feat5_title">Flight discovery</h2>
+            <p data-key="feat5_desc">Explore a wide range of available flights tailored to your destination. Compare schedules and prices within a clean, intuitive interface. Add any suggested flight directly to your personal itinerary. Please note that this feature is for planning purposes and does not include ticket purchasing yet.</p>
+        </div>
+        <div class="feature-image">
+            <img src="images/Flights.PNG" alt="Flight Discovery" class="mockup-img">
+        </div>
+    </section>
+
+    <section class="feature-block reverse">
+        <div class="feature-text">
+            <h2 class="feature-heading" data-key="feat6_title">Smart suggestions</h2>
+            <p data-key="feat6_desc">Explore hotels, restaurants, and activities directly within your destination of interest and build your daily schedule. Premium members unlock an elevated experience with superior content depth. Enjoy highly detailed descriptions, richer destination insights, and high definition imagery for every suggestion, ensuring you have the most complete view of your upcoming journey.</p>
+        </div>
+        <div class="feature-image slideshow" id="slideshow-suggestions">
+            <img src="images/suggestionsGeneral.PNG" alt="Smart Suggestions General" class="mockup-img active">
+            <img src="images/suggestionsDetails.PNG" alt="Smart Suggestions Detailed" class="mockup-img">
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p data-key="footer_copy">Copyright Jorplan Two Thousand Twenty Six. All rights reserved.</p>
     </footer>
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>

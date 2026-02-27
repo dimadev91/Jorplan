@@ -1,4 +1,3 @@
-/* Reset dei margini e font */
 * {
     margin: 0;
     padding: 0;
@@ -7,117 +6,167 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    /* Gradiente scuro con riflesso dorato nell'angolo destro come nelle foto */
     background: radial-gradient(circle at top right, rgba(255, 204, 0, 0.15), transparent 50%),
                 linear-gradient(135deg, #2b1040 0%, #0f051a 100%);
+    background-attachment: fixed;
     color: #ffffff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    line-height: 1.6;
+}
+
+.landing-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.main-header {
     text-align: center;
-    padding: 20px;
+    margin-bottom: 60px;
 }
 
-.landing-container {
-    max-width: 650px;
-    width: 100%;
+.logo-large {
+    height: 180px;
+    width: auto;
+    margin-bottom: 30px;
 }
 
-/* Stile del Logo */
-.logo {
-    font-size: 56px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    letter-spacing: -2px;
-}
-
-.logo-d {
-    color: #ffcc00; /* Oro */
-}
-
-.logo {
-    color: #58c1be; /* Colore 'plan' azzurro/verde acqua */
-}
-
-/* Testi */
-.headline {
-    font-size: 26px;
-    font-weight: 600;
+.hero-title {
+    font-size: 36px;
     color: #ffcc00;
     margin-bottom: 20px;
 }
 
-.description {
-    font-size: 15px;
-    line-height: 1.5;
+.hero-subtitle {
+    font-size: 18px;
     color: #cccccc;
-    margin-bottom: 40px;
-    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* Stilizzazione del Form */
+.subscription-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 500px;
+}
+
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
 }
 
 input, textarea {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
-    padding: 14px 18px;
-    color: #ffffff;
-    font-size: 14px;
-    outline: none;
-    transition: border 0.3s;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    resize: vertical;
 }
 
-input:focus, textarea:focus {
-    border-color: #ffcc00;
-}
-
-textarea {
-    height: 100px;
-    resize: none;
-}
-
-/* Bottone Submit Giallo/Oro */
-.submit-button {
-    background-color: #d4b446;
+.cta-button {
+    background: #d4b446;
     color: #1a0b2e;
     border: none;
-    border-radius: 20px;
-    padding: 12px;
+    padding: 15px;
+    border-radius: 25px;
     font-weight: 600;
-    font-size: 14px;
     cursor: pointer;
-    margin-top: 10px;
-    transition: background 0.3s;
+    font-size: 16px;
 }
 
-.submit-button:hover {
-    background-color: #ffcc00;
+.feature-block {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 120px;
 }
 
-/* Footer */
-.footer {
-    margin-top: 50px;
-    opacity: 0.6;
-    font-size: 12px;
+.feature-block.reverse {
+    flex-direction: row-reverse;
 }
 
-.footer nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 10px;
-    border-bottom: 1px solid #ffffff;
+.feature-text {
+    flex: 1;
 }
 
-.footer p {
-    margin-top: 15px;
+.feature-heading {
+    color: #ffcc00;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.feature-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 600px;
+}
+
+.mockup-img {
+    height: 100%;
+    width: auto;
+    border-radius: 30px;
+    border: 8px solid #1a1a1a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.slideshow {
+    position: relative;
+}
+
+.slideshow img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.slideshow img.active {
+    opacity: 1;
+    position: relative;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255,204,0,0.3);
+    margin: 60px 0;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.language-selector-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+#languageSwitch {
+    background: #1a0b2e;
+    color: white;
+    border: 1px solid #ffcc00;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .feature-block, .feature-block.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
 }
